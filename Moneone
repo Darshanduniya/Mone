@@ -1,0 +1,26 @@
+import monetdb.sql as mdb
+
+# Connect to MonetDB database
+
+conn = mdb.connect(username="your_username", password="your_password", hostname="localhost", database="your_database")
+
+# Create a cursor object
+
+cur = conn.cursor()
+
+# Execute a query to fetch the first 10 records
+
+cur.execute("SELECT * FROM your_table LIMIT 10")
+
+# Fetch the results and print them
+
+for row in cur.fetchall():
+
+    print(row)
+
+# Close the cursor and database connection
+
+cur.close()
+
+conn.close()
+
